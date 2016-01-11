@@ -13,6 +13,8 @@
 		D8F950BA1C3D2362000790DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F950B81C3D2362000790DD /* Main.storyboard */; };
 		D8F950BC1C3D2363000790DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F950BB1C3D2363000790DD /* Assets.xcassets */; };
 		D8F950BF1C3D2363000790DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F950BD1C3D2363000790DD /* LaunchScreen.storyboard */; };
+		D8F950C91C3D237B000790DD /* CKAudioPlayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F950C81C3D237B000790DD /* CKAudioPlayerHelper.m */; };
+		D8F950CB1C3D26D7000790DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F950CA1C3D26D7000790DD /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		D8F950BB1C3D2363000790DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8F950BE1C3D2363000790DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8F950C01C3D2363000790DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8F950C71C3D237B000790DD /* CKAudioPlayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAudioPlayerHelper.h; sourceTree = "<group>"; };
+		D8F950C81C3D237B000790DD /* CKAudioPlayerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAudioPlayerHelper.m; sourceTree = "<group>"; };
+		D8F950CA1C3D26D7000790DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F950CB1C3D26D7000790DD /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,8 @@
 		D8F950A31C3D2362000790DD = {
 			isa = PBXGroup;
 			children = (
+				D8F950CA1C3D26D7000790DD /* AVFoundation.framework */,
+				D8F950C61C3D237B000790DD /* CKAudioPlayerHelper */,
 				D8F950AE1C3D2362000790DD /* AudioPlayerHelper */,
 				D8F950AD1C3D2362000790DD /* Products */,
 			);
@@ -79,6 +87,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D8F950C61C3D237B000790DD /* CKAudioPlayerHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D8F950C71C3D237B000790DD /* CKAudioPlayerHelper.h */,
+				D8F950C81C3D237B000790DD /* CKAudioPlayerHelper.m */,
+			);
+			path = CKAudioPlayerHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +127,7 @@
 				TargetAttributes = {
 					D8F950AB1C3D2362000790DD = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = XGX2A7H5J9;
 					};
 				};
 			};
@@ -150,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F950B71C3D2362000790DD /* ViewController.m in Sources */,
+				D8F950C91C3D237B000790DD /* CKAudioPlayerHelper.m in Sources */,
 				D8F950B41C3D2362000790DD /* AppDelegate.m in Sources */,
 				D8F950B11C3D2362000790DD /* main.m in Sources */,
 			);
@@ -213,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -261,7 +280,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AudioPlayerHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ifunchat.AudioPlayerHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,7 +293,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AudioPlayerHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ifunchat.AudioPlayerHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,6 +321,7 @@
 				D8F950C51C3D2363000790DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
